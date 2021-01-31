@@ -14,6 +14,7 @@ public class EndScreen : MonoBehaviour
     public float visualBarkScoreP2;
     public float visualTotalScoreP2;
     public float scoreUpSpeed;
+    private float autoScroll;
     private GameObject gameController;
     private int scoreRevealCounter;
     private GameObject player;
@@ -29,10 +30,11 @@ public class EndScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.FindWithTag("GameController");
-        player = GameObject.FindWithTag("Player");
-        pauseController = GameObject.FindWithTag("PauseController");
-        pauseController.GetComponent<Pause>().paused = true;
+        gameController = this.gameObject;
+        player = GameObject.FindGameObjectWithTag("Player");
+        pauseController = this.gameObject;
+        this.gameObject.GetComponent<Pause>().paused = true;
+        autoScroll = 1f;
         // singlePlayer = player.GetComponent<PlayerController>().singlePlayer;
         singlePlayer = false;
     }
@@ -40,9 +42,12 @@ public class EndScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        autoScroll -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space) || autoScroll <= 0f)
         {
             scoreRevealCounter++;
+            autoScroll = 1f;
         }
         if (gameObject.activeSelf)
         {
@@ -83,18 +88,18 @@ public class EndScreen : MonoBehaviour
     {
         if (P1)
         {
-            if (visualTimeScoreP1 < gameController.GetComponent<Scoring>().currentScoreP1)
+            if (visualTimeScoreP1 < this.gameObject.GetComponent<Scoring>().currentScoreP1)
             {
-                visualTimeScoreP1 += Mathf.Min(Time.deltaTime * scoreUpSpeed, gameController.GetComponent<Scoring>().currentScoreP1);
+                visualTimeScoreP1 += Mathf.Min(Time.deltaTime * scoreUpSpeed, this.gameObject.GetComponent<Scoring>().currentScoreP1);
                 visualTimeScoreP1 = Mathf.FloorToInt(visualTimeScoreP1);
                 scoreTimeP1.text = "Time: " + visualTimeScoreP1;
             }
         }
         else
         {
-            if (visualTimeScoreP2 < gameController.GetComponent<Scoring>().currentScoreP2)
+            if (visualTimeScoreP2 < this.gameObject.GetComponent<Scoring>().currentScoreP2)
             {
-                visualTimeScoreP2 += Mathf.Min(Time.deltaTime * scoreUpSpeed, gameController.GetComponent<Scoring>().currentScoreP2);
+                visualTimeScoreP2 += Mathf.Min(Time.deltaTime * scoreUpSpeed, this.gameObject.GetComponent<Scoring>().currentScoreP2);
                 visualTimeScoreP2 = Mathf.FloorToInt(visualTimeScoreP2);
                 scoreTimeP2.text = "Time: " + visualTimeScoreP2;
             }

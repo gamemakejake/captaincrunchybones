@@ -9,21 +9,24 @@ public class Pause : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        paused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        if (this.gameObject.GetComponent<GameManager>().currentGameState == GameManager.GAMESTATE.Dog)
         {
-            if (paused)
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
             {
-                UnpauseGame();
-            }
-            else
-            {
-                PauseGame();
+                if (paused)
+                {
+                    UnpauseGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }
@@ -32,12 +35,16 @@ public class Pause : MonoBehaviour
     {
         paused = true;
         pauseScreen.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void UnpauseGame()
     {
         paused = false;
         pauseScreen.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void QuitGame()

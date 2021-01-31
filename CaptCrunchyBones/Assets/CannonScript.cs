@@ -17,14 +17,30 @@ public class CannonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spotNum = Random.Range(0, startingPositions.Length - 1);
+        CannonStarts();
+    }
 
+    public void CannonStarts()
+    {
+        canFire = true;
+        spotNum = Random.Range(0, startingPositions.Length - 1);
         if (startingPositions != null)
         {
             this.transform.position = startingPositions[spotNum].position;
         }
         rotYInitial = this.transform.rotation.y;
         rotY = 0;
+
+        cannonCam.transform.position = this.transform.position + viewOffset;
+        cannonCam.transform.LookAt(this.transform.position + transform.up * 2);
+    }
+
+    public void DeleteShot()
+    {
+        if (projectileShot != null)
+        {
+            Destroy(projectileShot);
+        }
     }
 
     // Update is called once per frame

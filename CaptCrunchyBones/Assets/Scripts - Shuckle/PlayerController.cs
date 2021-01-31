@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;
     public Rigidbody rb;
     public GameObject PS_Digging;
+    public Transform[] startingPos;
     public AudioSource bark;
     public AudioClip[] barkSounds;
     public bool enableHeadBob;
@@ -18,12 +19,21 @@ public class PlayerController : MonoBehaviour
     public float cameraBobSpeed;
     public float digIntervalTimer;
     public int numBarks;
-    public enum STATES { Moving, Digging}
+    public enum STATES { Moving, Digging, Incapacitated}
     public STATES currentState;
     // Start is called before the first frame update
     void Start()
     {
         cameraXRot = 0f;
+    }
+
+    private void OnEnable()
+    {
+        if(startingPos != null)
+        {
+            this.transform.position = startingPos[Random.Range(0, startingPos.Length - 1)].position;
+            this.transform.rotation = Quaternion.identity;
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +51,8 @@ public class PlayerController : MonoBehaviour
                         {
                             digIntervalTimer = 0.5f;
                             currentState = STATES.Digging;
+                            FindObjectOfType<Pause>().GetComponent<Pause>().paused = true;
+                            FindObjectOfType<GameManager>().GetComponent<GameManager>().currentGameState = GameManager.GAMESTATE.DiggingUp;
                             StartCoroutine(DigParticles());
                         }
                     }
@@ -120,8 +132,9 @@ public class PlayerController : MonoBehaviour
                 digIntervalTimer -= Time.deltaTime;
                 if (digIntervalTimer <= 0f)
                 {
-                            StopCoroutine(DigParticles());
-                            currentState = STATES.Moving;
+                    StopCoroutine(DigParticles());
+                    currentState = STATES.Incapacitated;
+                    FindObjectOfType<GameManager>().GetComponent<GameManager>().ResetGame(3);
                 }
                 break;
             }

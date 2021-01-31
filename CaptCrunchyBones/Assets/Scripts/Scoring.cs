@@ -11,19 +11,21 @@ public class Scoring : MonoBehaviour
     public float currentScoreP2;
     public Text scoreText;
     public float scoreDropSpeed;
-    private GameObject pauseController;
+    public GameObject pauseController;
     public bool P1;
     public GameObject endScreen;
     // Start is called before the first frame update
     void Start()
     {
-        pauseController = GameObject.FindWithTag("PauseController");
-        P1 = true;
+        //pauseController = GameObject.FindGameObjectWithTag("GameController");
+        //P1 = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Hi I exist.");
+        //Debug.Log("Is Paused: " + pauseController.GetComponent<Pause>().paused);
         if (pauseController.GetComponent<Pause>().paused == false)
         {
             if (P1)
@@ -42,20 +44,21 @@ public class Scoring : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SwitchPlayer();
-        }
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    SwitchPlayer();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            endScreen.SetActive(true);
-        }
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    endScreen.SetActive(true);
+        //}
     }
 
     public void SwitchPlayer()
     {
         P1 = !P1;
         timer = 0;
+        scoreText.text = null;
     }
 }
