@@ -58,6 +58,7 @@ public class CannonScript : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 projectileShot = Instantiate(projectile, shootPos.position, Quaternion.identity, null);
+                shotSpeed = Random.Range(80, 100);
                 projectileShot.GetComponent<Rigidbody>().velocity = this.transform.up * shotSpeed;
                 projectileShot.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f)));
                 canFire = false;

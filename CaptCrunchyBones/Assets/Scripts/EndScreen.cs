@@ -27,6 +27,9 @@ public class EndScreen : MonoBehaviour
     public Text winner;
     private GameObject pauseController;
     public bool singlePlayer;
+    public GameObject p1WinImage;
+    public GameObject p2WinImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -160,10 +163,12 @@ public class EndScreen : MonoBehaviour
         if (visualTimeScoreP1 >= visualTimeScoreP2)
         {
             winner.text = "Player 1 Wins!";
+            p1WinImage.SetActive(true);
         }
         else
         {
             winner.text = "Player 2 Wins!";
+            p2WinImage.SetActive(true);
         }
     }
 }
