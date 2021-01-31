@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject creditsScreen;
     public GameObject howToPlayScreen;
+    public string sceneNameP2;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class MainMenu : MonoBehaviour
 
     public void Start2P()
     {
-        SceneManager.LoadScene(sceneName: "2P");
+        SceneManager.LoadScene(sceneName: sceneNameP2);
     }
 
     public void HowToPlay()
