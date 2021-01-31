@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CameraCapture : MonoBehaviour
 {
-    //public int FileCounter = 0;
+    public int FileCounter = 0;
     public GameObject picture;
     public Texture thing;
     // Start is called before the first frame update
