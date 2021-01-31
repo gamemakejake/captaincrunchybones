@@ -1705,6 +1705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b78d489ea6dc9a4d86fe42de9bcf3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FileCounter: 0
   picture: {fileID: 403829868}
   thing: {fileID: 0}
 --- !u!114 &1854417408
@@ -1972,7 +1973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550c5c8dec9aefd469e4d8d9c48a02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barkPenalty: 0
+  barkPenalty: 5
   visualTimeScoreP1: 0
   visualBarkScoreP1: 0
   visualTotalScoreP1: 0
@@ -1980,6 +1981,7 @@ MonoBehaviour:
   visualBarkScoreP2: 0
   visualTotalScoreP2: 0
   scoreUpSpeed: 500
+  player: {fileID: 1395157115}
   scoreTimeP1: {fileID: 1154626636}
   scoreBarksP1: {fileID: 1272443518}
   scoreTotalP1: {fileID: 1043132838}
@@ -2031,7 +2033,7 @@ PrefabInstance:
     - target: {fileID: 2755040271967405262, guid: 1435b02ee3264af4086836b4229b806b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 2755040271967405262, guid: 1435b02ee3264af4086836b4229b806b,
         type: 3}
@@ -2093,6 +2095,11 @@ PrefabInstance:
       propertyPath: startingPositions.Array.data[2]
       value: 
       objectReference: {fileID: 1407951987}
+    - target: {fileID: 2755040271967405263, guid: 1435b02ee3264af4086836b4229b806b,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2755040271380134308, guid: 1435b02ee3264af4086836b4229b806b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1435b02ee3264af4086836b4229b806b, type: 3}
@@ -2182,6 +2189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: barkSounds.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671799475954442287, guid: a9fe3eac3eabf91498cc45055f87aac8,
+        type: 3}
+      propertyPath: numBarks.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3671799475954442287, guid: a9fe3eac3eabf91498cc45055f87aac8,
         type: 3}

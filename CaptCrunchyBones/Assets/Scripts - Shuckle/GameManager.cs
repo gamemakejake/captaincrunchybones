@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<CameraCapture>().gameObject.SetActive(false);
         this.gameObject.GetComponent<Scoring>().enabled = true;
         player.SetActive(true);
-        player.GetComponent<PlayerController>().numBarks = 0;
+        //player.GetComponent<PlayerController>().numBarks = 0;
         player.GetComponent<PlayerController>().currentState = PlayerController.STATES.Moving;
         this.gameObject.GetComponent<Pause>().paused = false;
         currentGameState = GAMESTATE.Dog;
