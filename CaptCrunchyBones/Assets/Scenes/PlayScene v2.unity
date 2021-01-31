@@ -40215,7 +40215,7 @@ PrefabInstance:
     - target: {fileID: 2755040271967405263, guid: 1435b02ee3264af4086836b4229b806b,
         type: 3}
       propertyPath: startingPositions.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2755040271967405263, guid: 1435b02ee3264af4086836b4229b806b,
         type: 3}
@@ -40231,17 +40231,17 @@ PrefabInstance:
         type: 3}
       propertyPath: startingPositions.Array.data[1]
       value: 
-      objectReference: {fileID: 1451217445}
+      objectReference: {fileID: 1224973124}
     - target: {fileID: 2755040271967405263, guid: 1435b02ee3264af4086836b4229b806b,
         type: 3}
       propertyPath: startingPositions.Array.data[2]
       value: 
-      objectReference: {fileID: 1802890692}
+      objectReference: {fileID: 1451217445}
     - target: {fileID: 2755040271967405263, guid: 1435b02ee3264af4086836b4229b806b,
         type: 3}
       propertyPath: startingPositions.Array.data[3]
       value: 
-      objectReference: {fileID: 1224973124}
+      objectReference: {fileID: 1802890692}
     - target: {fileID: 2755040271967405263, guid: 1435b02ee3264af4086836b4229b806b,
         type: 3}
       propertyPath: shotSpeed
@@ -40267,6 +40267,11 @@ PrefabInstance:
       propertyPath: viewOffset.z
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 2755040271967405263, guid: 1435b02ee3264af4086836b4229b806b,
+        type: 3}
+      propertyPath: startingPositions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1224973124}
     m_RemovedComponents:
     - {fileID: 2755040271380134308, guid: 1435b02ee3264af4086836b4229b806b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1435b02ee3264af4086836b4229b806b, type: 3}
