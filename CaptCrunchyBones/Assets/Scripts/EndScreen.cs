@@ -17,7 +17,7 @@ public class EndScreen : MonoBehaviour
     private float autoScroll;
     private GameObject gameController;
     private int scoreRevealCounter;
-    private GameObject player;
+    public GameObject player;
     public Text scoreTimeP1;
     public Text scoreBarksP1;
     public Text scoreTotalP1;
@@ -31,7 +31,7 @@ public class EndScreen : MonoBehaviour
     void Start()
     {
         gameController = this.gameObject;
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         pauseController = this.gameObject;
         this.gameObject.GetComponent<Pause>().paused = true;
         autoScroll = 1f;
@@ -92,7 +92,7 @@ public class EndScreen : MonoBehaviour
             {
                 visualTimeScoreP1 += Mathf.Min(Time.deltaTime * scoreUpSpeed, this.gameObject.GetComponent<Scoring>().currentScoreP1);
                 visualTimeScoreP1 = Mathf.FloorToInt(visualTimeScoreP1);
-                scoreTimeP1.text = "Time: " + visualTimeScoreP1;
+                scoreTimeP1.text = "Time: " + visualTimeScoreP1.ToString();
             }
         }
         else
@@ -101,7 +101,7 @@ public class EndScreen : MonoBehaviour
             {
                 visualTimeScoreP2 += Mathf.Min(Time.deltaTime * scoreUpSpeed, this.gameObject.GetComponent<Scoring>().currentScoreP2);
                 visualTimeScoreP2 = Mathf.FloorToInt(visualTimeScoreP2);
-                scoreTimeP2.text = "Time: " + visualTimeScoreP2;
+                scoreTimeP2.text = "Time: " + visualTimeScoreP2.ToString();
             }
         }
     }
@@ -110,18 +110,18 @@ public class EndScreen : MonoBehaviour
     {
         if (P1)
         {
-            if (visualBarkScoreP1 < 500) //player.GetComponent<PlayerController>().numBarks * barkPenalty)
+            if (visualBarkScoreP1 < player.GetComponent<PlayerController>().numBarks[0] * barkPenalty)
             {
-                visualBarkScoreP1 += Mathf.Min(Time.deltaTime * scoreUpSpeed, 500);
+                visualBarkScoreP1 += Mathf.Min(Time.deltaTime * scoreUpSpeed, player.GetComponent<PlayerController>().numBarks[0] * barkPenalty);
                 visualBarkScoreP1 = Mathf.FloorToInt(visualBarkScoreP1);
                 scoreBarksP1.text = "Barks: " + visualBarkScoreP1;
             }
         }
         else
         {
-            if (visualBarkScoreP2 < 500) //player.GetComponent<PlayerController>().numBarks * barkPenalty)
+            if (visualBarkScoreP2 < player.GetComponent<PlayerController>().numBarks[1] * barkPenalty)
             {
-                visualBarkScoreP2 += Mathf.Min(Time.deltaTime * scoreUpSpeed, 500);
+                visualBarkScoreP2 += Mathf.Min(Time.deltaTime * scoreUpSpeed, player.GetComponent<PlayerController>().numBarks[1] * barkPenalty);
                 visualBarkScoreP2 = Mathf.FloorToInt(visualBarkScoreP2);
                 scoreBarksP2.text = "Barks: " + visualBarkScoreP2;
             }

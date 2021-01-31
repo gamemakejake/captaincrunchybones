@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float cameraTargetPos;
     public float cameraBobSpeed;
     public float digIntervalTimer;
-    public int numBarks;
+    public int[] numBarks;
     public enum STATES { Moving, Digging, Incapacitated}
     public STATES currentState;
     // Start is called before the first frame update
@@ -77,7 +77,11 @@ public class PlayerController : MonoBehaviour
                         }
                         bark.pitch = Random.Range(0.9f, 1.1f);
                         bark.Play();
-                        numBarks++;
+
+                        if (GameObject.FindObjectOfType<Scoring>().GetComponent<Scoring>().P1 == true)
+                        { numBarks[0]++; }
+                        if (GameObject.FindObjectOfType<Scoring>().GetComponent<Scoring>().P1 == false)
+                        { numBarks[1]++; }
                     }
 
                     //Jump
