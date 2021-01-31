@@ -59,7 +59,7 @@ public class EndScreen : MonoBehaviour
                     RevealTimeScores(false);
                 }
             }
-            if (scoreRevealCounter > 1)
+            /*if (scoreRevealCounter > 1)
             {
                 RevealBarkScores(true);
                 if (!singlePlayer)
@@ -75,6 +75,7 @@ public class EndScreen : MonoBehaviour
                     RevealTotalScores(false);
                 }
             }
+                        */
         }
     }
 
@@ -103,7 +104,12 @@ public class EndScreen : MonoBehaviour
                 visualTimeScoreP2 = Mathf.FloorToInt(visualTimeScoreP2);
                 scoreTimeP2.text = "Time: " + visualTimeScoreP2.ToString();
             }
+            else
+            {
+                RevealWinner();
+            }
         }
+
     }
 
     public void RevealBarkScores(bool P1)
@@ -146,16 +152,12 @@ public class EndScreen : MonoBehaviour
                 visualTotalScoreP2 = Mathf.FloorToInt(visualTotalScoreP2);
                 scoreTotalP2.text = "Total: " + visualTotalScoreP2;
             }
-            else
-            {
-                RevealWinner();
-            }
         }
     }
 
     public void RevealWinner()
     {
-        if (visualTotalScoreP1 >= visualTotalScoreP2)
+        if (visualTimeScoreP1 >= visualTimeScoreP2)
         {
             winner.text = "Player 1 Wins!";
         }
