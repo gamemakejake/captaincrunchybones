@@ -1467,6 +1467,7 @@ MonoBehaviour:
   mainMenu: {fileID: 808353601}
   creditsScreen: {fileID: 65731314}
   howToPlayScreen: {fileID: 52308265}
+  sceneNameP2: PlayScene v2
 --- !u!224 &808353603
 RectTransform:
   m_ObjectHideFlags: 0
