@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         //Take the Picture
+        Debug.Log(FindObjectOfType<CameraCapture>());
         FindObjectOfType<CameraCapture>().GetComponent<CameraCapture>().CamCapture();
         FindObjectOfType<CameraCapture>().gameObject.SetActive(false);
         this.gameObject.GetComponent<Scoring>().enabled = true;
