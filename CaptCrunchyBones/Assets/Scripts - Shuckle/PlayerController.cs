@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;
     public Rigidbody rb;
     public GameObject PS_Digging;
+    public AudioSource bark;
+    public AudioClip[] barkSounds;
     public bool enableHeadBob;
     public float rotSpeed;
     public float moveSpeed;
@@ -16,15 +18,11 @@ public class PlayerController : MonoBehaviour
     public float cameraBobSpeed;
     public float digIntervalTimer;
     public int numBarks;
-    public enum STATES { Moving, Digging, PreJump, Jump}
+    public enum STATES { Moving, Digging}
     public STATES currentState;
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor actually performs like in an FPS
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
         cameraXRot = 0f;
     }
 
@@ -45,6 +43,29 @@ public class PlayerController : MonoBehaviour
                             currentState = STATES.Digging;
                             StartCoroutine(DigParticles());
                         }
+                    }
+
+                    //BARK BARK
+                    if(Input.GetButtonDown("Fire2"))
+                    {
+                        GameObject bone = GameObject.FindGameObjectWithTag("Bone");
+                        float distance = (bone.transform.position - this.transform.position).magnitude;
+                        Debug.Log("Distance to Bone: " + distance);
+                        if(distance <= 25f)
+                        {
+                            bark.clip = barkSounds[0];
+                        }
+                        else if (distance <= 50f)
+                        {
+                            bark.clip = barkSounds[1];
+                        }
+                        else
+                        {
+                            bark.clip = barkSounds[2];
+                        }
+                        bark.pitch = Random.Range(0.9f, 1.1f);
+                        bark.Play();
+                        numBarks++;
                     }
 
                     //Jump

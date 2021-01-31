@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PauseController
+  - Bone
   layers:
   - Default
   - TransparentFX
