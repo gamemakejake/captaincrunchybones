@@ -46,7 +46,10 @@ public class EndScreen : MonoBehaviour
     void Update()
     {
         autoScroll -= Time.deltaTime;
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+            {
+            Application.Quit();
+        }
         if (Input.GetKeyDown(KeyCode.Space) || autoScroll <= 0f)
         {
             scoreRevealCounter++;
