@@ -340,6 +340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DOGGO
       objectReference: {fileID: 0}
+    - target: {fileID: 3671799475954442281, guid: a9fe3eac3eabf91498cc45055f87aac8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3671799475954442450, guid: a9fe3eac3eabf91498cc45055f87aac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,6 +655,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cannon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219027532328108645, guid: 61d4349b70b8f6149a6721c380303fb1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6923498618512765046, guid: 61d4349b70b8f6149a6721c380303fb1,
         type: 3}
@@ -1695,6 +1705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PowerUpObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275536381470843123, guid: 9978a913a0a0b9f4bbfa436b62e000d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9978a913a0a0b9f4bbfa436b62e000d4, type: 3}
