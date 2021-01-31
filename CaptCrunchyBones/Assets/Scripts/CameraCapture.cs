@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class CameraCapture : MonoBehaviour
 {
-    public int FileCounter = 0;
     public GameObject picture;
     public Texture thing;
     // Start is called before the first frame update
@@ -33,9 +32,7 @@ public class CameraCapture : MonoBehaviour
         Image.ReadPixels(new Rect(0, 0, Cam.targetTexture.width, Cam.targetTexture.height), 0, 0);
         Image.Apply();
         RenderTexture.active = currentRT;
-        var Bytes = Image.EncodeToPNG();
 
-        File.WriteAllBytes(Application.dataPath + "/" + FileCounter + ".png", Bytes);
 
         picture.GetComponent<CanvasRenderer>().SetTexture(Image);
     }
