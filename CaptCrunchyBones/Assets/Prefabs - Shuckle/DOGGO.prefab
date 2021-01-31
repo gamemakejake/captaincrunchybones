@@ -265,11 +265,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 3671799474605086061}
   rb: {fileID: 3671799475954442286}
+  PS_Digging: {fileID: 0}
   enableHeadBob: 1
   rotSpeed: 1
   moveSpeed: 1
+  jumpSpeed: 5
   cameraTargetPos: 0.6
   cameraBobSpeed: 0.1
+  digIntervalTimer: 0
+  numBarks: 0
   currentState: 0
 --- !u!54 &3671799475954442286
 Rigidbody:
