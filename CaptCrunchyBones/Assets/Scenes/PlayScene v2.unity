@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -27661,6 +27661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGameState: 0
   maxRounds: 2
+  P1UI: {fileID: 12057561}
+  P2UI: {fileID: 510396306}
   player: {fileID: 856986942}
   renderTexCamera: {fileID: 90679358}
   endScreen: {fileID: 1147243401}

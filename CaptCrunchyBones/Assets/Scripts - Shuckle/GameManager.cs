@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     private int roundCount;
     public int maxRounds;
+    public GameObject P1UI, P2UI;
     public GameObject player;
     public GameObject renderTexCamera;
     public EndScreen endScreen;
@@ -63,7 +64,14 @@ public class GameManager : MonoBehaviour
     //Reset after dog found bone :]
     public IEnumerator NextRoundSetup(int WaitTime)
     {
-        //UI Says to Switch Stuffs
+        if (this.GetComponent<Scoring>().P1 == true)
+        {
+            P1UI.SetActive(true);
+        }
+        if (this.GetComponent<Scoring>().P1 == false)
+        {
+            P2UI.SetActive(true);
+        }
 
         //Delete the Bone
         FindObjectOfType<CannonScript>().GetComponent<CannonScript>().DeleteShot();
