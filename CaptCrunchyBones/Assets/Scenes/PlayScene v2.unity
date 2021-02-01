@@ -10645,11 +10645,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1147243402}
+    - target: {fileID: 5320155376786474520, guid: e47a06201ed72d547860e08980d779e8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnpauseGame
       objectReference: {fileID: 0}
     - target: {fileID: 5320155377477099786, guid: e47a06201ed72d547860e08980d779e8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1147243402}
+    - target: {fileID: 5320155377477099786, guid: e47a06201ed72d547860e08980d779e8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 5320155377560248338, guid: e47a06201ed72d547860e08980d779e8,
         type: 3}
