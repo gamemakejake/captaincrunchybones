@@ -49,6 +49,14 @@ public class GameManager : MonoBehaviour
     public IEnumerator SwitchToPlayerState()
     {
         yield return new WaitForSeconds(1);
+        if (this.GetComponent<Scoring>().P1 == true)
+        {
+            P1UI.SetActive(true);
+        }
+        if (this.GetComponent<Scoring>().P1 == false)
+        {
+            P2UI.SetActive(true);
+        }
         //Take the Picture
         Debug.Log(FindObjectOfType<CameraCapture>());
         FindObjectOfType<CameraCapture>().GetComponent<CameraCapture>().CamCapture();
