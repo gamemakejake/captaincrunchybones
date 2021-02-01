@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2343593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1450,7 +1450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &808353602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2101,7 +2101,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -140}
-  m_SizeDelta: {x: 2348, y: 195}
+  m_SizeDelta: {x: 2048, y: 213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420383432
 MonoBehaviour:
@@ -2121,7 +2121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dfd1c12acd6aa664287f3b8adac70d00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f87976436e1d8e4983d28a7f5738dd9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
